@@ -86,7 +86,7 @@ save_file_neg = open(os.path.join(path_to_dataset, negative_samples_file), 'w')
 pos_writer = csv.writer(save_file_pos)
 neg_writer = csv.writer(save_file_neg)
 
-for lbl in tqdm(range(len(train_annot_aug.shape[1]))):
+for lbl in tqdm(range(train_annot_aug.shape[1])):
     positive_samples, negative_samples = positive_negative_split(lbl, 
                                 num_positive_negative_samples, semantic_paths, 
                                 node_layers, train_annot_aug, singleton_nodes)
