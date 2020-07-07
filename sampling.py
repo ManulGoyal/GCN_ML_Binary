@@ -176,6 +176,8 @@ def positive_negative_split(lbl, count, sp, nl, annot, singleton_nodes):
     positive_samples_all = examples_with_label(lbl, annot, list(range(annot.shape[0])))
 
     if len(positive_samples_all) <= count:
+        # select all positive samples
+        count = len(positive_samples_all)
         positive_samples = positive_samples_all
     else:
         # randomly sample 'count' number of unique examples
